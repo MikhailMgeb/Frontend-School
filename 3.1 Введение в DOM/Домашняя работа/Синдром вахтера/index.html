@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Синдром вахтера</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <div class="block-login">
+        <img class="start-page" src="/image/1588782631_dp63i3t.png">
+        <div class="block-input">
+            <input id="login" class="login-input">
+            <input id="password" class="password-input" type="password">
+            <button id="button" class="login-button">Login</button>
+            <button id="button-say" class="button-hello block-display"></button>
+            <div id="notification" class="block-display notification-error">Неправильный логин или пароль!</div>
+
+        </div>
+    </div>
+    <script>
+        const login = document.getElementById('login');
+        const password = document.getElementById('password');
+        const button = document.getElementById('button');
+        const buttonSay = document.getElementById('button-say');
+        const notification = document.getElementById('notification');
+
+        const loginsPlayer = {
+            misha: 'asd',
+            sasha: '123',
+        };
+
+
+        button.onclick = function () {
+            if (password.value === loginsPlayer[login.value]) {
+
+                login.classList.add('block-display');
+                password.classList.add('block-display');
+                button.classList.add('block-display');
+                buttonSay.textContent = (`Добро пожаловать ${login.value}`);
+                buttonSay.classList.remove('block-display');
+                notification.classList.add('block-display');
+
+            } else {
+
+                notification.classList.remove('block-display');
+                password.value = '';
+                login.value = '';
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

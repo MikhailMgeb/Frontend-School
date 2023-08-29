@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>Дело ясное, что дело тёмное</title>
+</head>
+
+<body class="page">
+    <section id="block-location" class="block-location">
+        <button id="button-theme" class="button-theme">!</button>
+        <div class="block-wrapper">
+            <h2 class="title">Оплата и доставка</h2>
+            <div id="text" class="box-container">
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const buttonTheme = document.getElementById('button-theme');
+        const blockLocation = document.getElementById('block-location');
+        const boxContainer = document.getElementById('text');
+
+        if (localStorage.getItem('black') === 'block-location-black') {
+            blockLocation.classList.add('block-location-black');
+        }
+
+        buttonTheme.addEventListener('click', function () {
+            blockLocation.classList.toggle('block-location-black');
+
+            if (blockLocation.classList.contains('block-location-black')) {
+                localStorage.setItem('black', 'block-location-black');
+            } else {
+                localStorage.removeItem('black');
+            }
+        })
+
+    </script>
+</body>
+
+</html>

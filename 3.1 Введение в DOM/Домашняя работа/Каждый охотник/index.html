@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каждый охотник</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <div id="rainbow" class="block-color"></div>
+    <script>
+
+        const rainbow = document.getElementById('rainbow')
+        const colors =
+            [
+                '#ff0000',
+                '#ff8000',
+                '#ffff00',
+                '#80ff00',
+                '#00ff00',
+                '#00ff80',
+                '#00ffff',
+                '#0080ff',
+                '#0000ff',
+                '#8000ff',
+                '#ff00ff',
+                '#ff0080',
+            ];
+
+        let i = 0;
+
+        rainbow.onclick = function () {
+            rainbow.style.background = colors[i];
+            i += 1;
+            if (i === 11) {
+                i = 0
+            }
+        }
+
+    </script>
+</body>
+
+</html>

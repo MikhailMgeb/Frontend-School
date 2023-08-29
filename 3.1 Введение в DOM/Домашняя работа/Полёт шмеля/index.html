@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полёт шмеля</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <div class="flight-bumblebee">
+        <img id="bumblebee" class="image" src="/image/bumblebee_d2vdnfdga4ie.svg">
+        <img  class="image-first" src="/image/first.png">
+        <img class="image-second" src="/image/second.png">
+        <img class="image-third" src="/image/third.png">
+        <img class="image-fourth" src="/image/fourth.png">
+    </div>
+    <div class="keyboard"> 
+        <button id="up" class="button">↑</button>
+        <button id="down" class="button">↓</button>
+        <button id="left" class="button">←</button>
+        <button id="right" class="button">→</button>
+    </div>
+    <script>
+        const up = document.getElementById('up')
+        const down = document.getElementById('down')
+        const left = document.getElementById('left')
+        const right = document.getElementById('right')
+
+        const bumblebee = document.getElementById('bumblebee')
+        let positionUpDown
+        let positionLeftRight
+        positionUpDown = bumblebee.offsetTop;
+        positionLeftRight = bumblebee.offsetLeft;
+
+        up.onclick = function () {
+            positionUpDown -= 30
+            bumblebee.style.top = positionUpDown + 'px';
+        }
+
+        down.onclick = function () {
+            positionUpDown += 30
+            bumblebee.style.top = positionUpDown+ 'px';
+        }
+        left.onclick = function () {
+            positionLeftRight -= 30
+            bumblebee.style.left = positionLeftRight + 'px';
+        }
+
+        right.onclick = function () {
+            positionLeftRight += 30
+            bumblebee.style.left = positionLeftRight + 'px';
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+.page {
+    margin: 0;
+    width: 100%;
+}
+
+.start-page {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/image/1588782631_dp63i3t.png);
+    display: flex;
+}
+
+.block-login {
+    display: flex;
+}
+
+.block-input {
+    display: flex;
+    position: relative;
+}
+
+.login-input {
+    font-family: serif;
+    line-height: 20px;
+    color: black;
+    position: absolute;
+    left: -823px;
+    top: 450px;
+    background: #bc9379;
+    opacity: 0.8;
+    border: 2px solid #71645e;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+
+}
+
+.password-input {
+    font-family: serif;
+    line-height: 20px;
+    color: black;
+    opacity: 0.8;
+    position: absolute;
+    left: -823px;
+    top: 520px;
+    background: #bc9379;
+    border: 2px solid #71645e;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.login-button {
+    font-family: serif;
+    font-size: 20px;
+    padding: 0 59px;
+    color: gold;
+    position: absolute;
+    left: -823px;
+    top: 600px;
+    border: 2px solid #71645e;
+    background: #750403;
+    opacity: 0.8;
+    border: 2px solid;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+}
+
+.login-button:active {
+    background: #71645e;
+}
+
+.block-display {
+    display: none;
+}
+
+.button-hello {
+    font-family: serif;
+    font-size: 24px;
+    padding: 20px 79px;
+    color: gold;
+    position: absolute;
+    left: -942px;
+    top: 550px;
+    border: 2px solid #71645e;
+    background: #750403;
+    opacity: 0.6;
+    border: 2px solid;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);   
+}
+.notification-error {
+    font-family: serif;
+    line-height: 20px;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    position: absolute;
+    left: -850px;
+    top: 562px;
+}

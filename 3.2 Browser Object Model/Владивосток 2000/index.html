@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Владивосток 2000</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <div class="block-locations">
+        <button id="button-location" class="button-my-location"><i class="fa-solid fa-location-dot fa-4x"></i></button>
+    </div>
+    <div class="distance-block">
+        <button id="varadero-distance-button" class="hidden distance-button"> Варадеро</button>
+        <button id="kirov-distance-button" class="hidden distance-button">Киров</button>
+        <button id="vorkuta-distance-button" class="hidden distance-button">Воркута</button>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/cd99e953db.js" crossorigin="anonymous">
+    </script>
+    <script>
+        const buttonLocation = document.getElementById('button-location');
+        const varaderoDistanceButton = document.getElementById('varadero-distance-button');
+        const kirovDistanceButton = document.getElementById('kirov-distance-button');
+        const vorkutaDistanceButton = document.getElementById('vorkuta-distance-button');
+
+        const LATITUDE_VARADERO = 23.1798;
+        const LONGITUDE_VARADERO = -81.1885;
+
+        const LATITUDE_KIROV = 58.6030;
+        const LONGITUDE_KIROV = 49.6679;
+
+        const LATITUDE_VORKUTA = 67.4969;
+        const LONGITUDE_VORKUTA = 64.0602;
+
+
+        buttonLocation.addEventListener('click', function () {
+            navigator.geolocation.getCurrentPosition(function (data) {
+
+                const latitudeMyLocation = data.coords.latitude;
+                const longitudeMyLocation = data.coords.longitude;
+                const distanceVaradero = Math.round(Math.sqrt(Math.pow((latitudeMyLocation - LATITUDE_VARADERO), 2) + Math.pow((longitudeMyLocation - LONGITUDE_VARADERO), 2)) * 111);
+                const distanceKirov = Math.round(Math.sqrt(Math.pow((latitudeMyLocation - LATITUDE_KIROV), 2) + Math.pow((longitudeMyLocation - LONGITUDE_KIROV), 2)) * 111);
+                const distanceVorkuta = Math.round(Math.sqrt(Math.pow((latitudeMyLocation - LATITUDE_VORKUTA), 2) + Math.pow((longitudeMyLocation - LONGITUDE_VORKUTA), 2)) * 111);
+                
+                setTimeout(function () {
+                    varaderoDistanceButton.classList.remove('hidden')
+                    kirovDistanceButton.classList.remove('hidden')
+                    vorkutaDistanceButton.classList.remove('hidden')
+                }, 500);
+
+                setTimeout(function () {
+                    varaderoDistanceButton.textContent += ' ' + distanceVaradero + ' км';
+                    kirovDistanceButton.textContent += ' ' + distanceKirov + ' км';
+                    vorkutaDistanceButton.textContent += ' ' + distanceVorkuta + ' км';
+                }, 700);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

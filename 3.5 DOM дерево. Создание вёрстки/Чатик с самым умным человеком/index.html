@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Голодные клики</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <article class="block">
+        <div class="block__phone">
+            <div class="block__phone__front"></div>
+            <div class="block__phone__chat">
+            </div>
+            <input class="block__phone__input">
+        </div>
+    </article>
+
+    <script>
+        const blockPhoneInput = document.querySelector('.block__phone__input');
+        const blockPhoneChat = document.querySelector('.block__phone__chat');
+
+        blockPhoneInput.addEventListener('keydown', function (event) {
+            if(blockPhoneInput.value === '') {
+                return;
+            }
+            if (event.code === 'Enter') {
+                const div = document.createElement('div');
+                div.classList.add('block__phone__chat__text');
+                div.textContent = blockPhoneInput.value;
+                blockPhoneChat.appendChild(div);
+                blockPhoneInput.value = '';
+            };
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.page {
+    margin: 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-cats {
+    margin: 25px;
+}
+
+.edit-cats__mood,
+.edit-cats__ginger {
+    margin-left: 10px;
+}
+
+.block-image {
+    text-align: center;
+}
+
+.image {
+    width: 300px;
+}

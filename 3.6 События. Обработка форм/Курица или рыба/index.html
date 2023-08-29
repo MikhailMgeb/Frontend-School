@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курица или рыба?</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <form class="registration-form">
+        <label class="registration-form__title">Онлайн-регистрация</label>
+        <div class="form-field">
+            <label for="choice-seat">Выбор сидения</label>
+            <input class="registration-form__input input-choice-seat" maxlength="3" name="seat" placeholder="A00"
+                id="choice-seat">
+            <div class="registration-form__error hidden"></div>
+        </div>
+        <div class="form-field">
+            <label for="food">Требуется питание на борту</label>
+            <input id="food" name="food-agree" class="registration-form__checkbox checkbox-food" type="checkbox">
+            <select id="food" name="food-choice" class="registration-form_select-food" disabled>
+                <option selected></option>
+                <option value="chiken">Курица</option>
+                <option value="fish">Рыба</option>
+            </select>
+            <div class="registration-form__error hidden"></div>
+        </div>
+        <div class="registration-form__agreement">
+            <button class="registration-form__button">Зарегистрироваться</button>
+        </div>
+    </form>
+
+    <script src="/index.js"></script>
+</body>
+
+</html>

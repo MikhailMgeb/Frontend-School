@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Квест на JS</title>
+</head>
+
+<body>
+    <h1>Какие-то супер-способности</h1>
+    <img src="/image/image1.png">
+    <p class="text">Привет, единственный раз в жизни у тебя появляется возможность выбрать суперспособность, подумай
+        хорошо, ведь
+        тебе с этим жить.</p>
+    <p class="text">Если ты просто уйдеш, у тебя появиться рандомная способность, у последнего моего посетителя
+        появилась
+        способность хрюкать вместо маргания, поверь мне это не самое худшее в моем списке</p>
+    <h2>Твой навык</h2>
+    <button id="page-first" href="/image/page1/index.html">Зрение ястреба</button>
+    <button id="page-second" href="/image/page2/index.html">Слух мангуста</button>
+    <button id="page-third" href="/image/page3/index.html">Мега-нюх</button>
+    <button id="page-fourth" href="/image/page4/index.html">Всё таки останусь при своих супер скиллах</button>
+
+</body>
+<script>
+    const pageFirst = document.getElementById('page-first');
+    const pageSecond = document.getElementById('page-second');
+    const pageThird = document.getElementById('page-third');
+    const pageFourth = document.getElementById('page-fourth');
+
+    pageFirst.addEventListener('click', function() {
+        location.href = '/image/page1/index.html';
+    });
+
+    pageSecond.addEventListener('click', function() {
+        location.href = '/image/page2/index.html';
+    });
+
+    pageThird.addEventListener('click', function() {
+        location.href = '/image/page3/index.html';
+    });
+
+    pageFourth.addEventListener('click', function() {
+        location.href = '/image/page3/index.html';
+    });
+
+</script>
+
+</html>

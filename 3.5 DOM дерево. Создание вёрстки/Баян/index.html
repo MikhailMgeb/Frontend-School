@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баян</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <article class="news-block">
+        <div class="news-block__wrapper">
+            <ul class="news-block__list">
+                <li class="news-block__item">
+                    <h3 class="news-block__title">За чертой бедности в России живут 10,5% населения. Это исторический
+                        минимум</h3>
+                    <p class="news-block__text">В 2021 году число россиян, живущих за чертой
+                        бедности, составляло
+                        16 миллионов человек — это 11
+                        процентов населения. При этом в отчете отмечается, что «граница бедности» по итогам 2022 года
+                        составила 14 тысяч 674 рубля в месяц против 12 тысяч 900 рублей в 2021 году.</p>
+                </li>
+                <li class="news-block__item">
+                    <h3 class="news-block__title">За чертой бедности в России живут 10,5% населения. Это исторический
+                        минимум</h3>
+                    <p class="news-block__text">В 2021 году число россиян, живущих за чертой
+                        бедности, составляло
+                        16 миллионов человек — это 11
+                        процентов населения. При этом в отчете отмечается, что «граница бедности» по итогам 2022 года
+                        составила 14 тысяч 674 рубля в месяц против 12 тысяч 900 рублей в 2021 году.</p>
+                </li>
+                <li class="news-block__item">
+                    <h3 class="news-block__title">За чертой бедности в России живут 10,5% населения. Это исторический
+                        минимум</h3>
+                    <p class="news-block__text">В 2021 году число россиян, живущих за чертой
+                        бедности, составляло
+                        16 миллионов человек — это 11
+                        процентов населения. При этом в отчете отмечается, что «граница бедности» по итогам 2022 года
+                        составила 14 тысяч 674 рубля в месяц против 12 тысяч 900 рублей в 2021 году.</p>
+                </li>
+                <li class="news-block__item">
+                    <h3 class="news-block__title">За чертой бедности в России живут 10,5% населения. Это исторический
+                        минимум</h3>
+                    <p class="news-block__text">В 2021 году число россиян, живущих за чертой
+                        бедности, составляло
+                        16 миллионов человек — это 11
+                        процентов населения. При этом в отчете отмечается, что «граница бедности» по итогам 2022 года
+                        составила 14 тысяч 674 рубля в месяц против 12 тысяч 900 рублей в 2021 году.</p>
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <script>
+        const newsBlockList = document.querySelector('.news-block__list');
+
+        newsBlockList.addEventListener('click', function (event) {
+            const target = event.target;
+
+            if(target.closest('.news-block__title') === null){
+                return;
+            }
+
+            const cuttentElement = target.closest('.news-block__title').nextElementSibling;
+
+            if (cuttentElement.style.maxHeight) {
+                document.querySelectorAll('.news-block__text').forEach((element) => element.style.maxHeight = null);
+            } else {
+                document.querySelectorAll('.news-block__text').forEach((element) => element.style.maxHeight = null);
+                cuttentElement.style.maxHeight = '100%';
+            }
+        })
+    </script>
+</body>
+
+</html>

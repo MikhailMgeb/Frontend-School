@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инпутный клининг</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page">
+    <div class="block-hash-teg">
+        <div class="input-block">
+            <input class="input">
+        </div>
+        <div class="hash-teg">
+        </div>
+    </div>
+    <script>
+        let date = [];
+        const hashTeg = document.querySelector('.hash-teg');
+        const input = document.querySelector('.input');
+
+        const nameHashTeg = document.createElement('div');
+        nameHashTeg.classList.add('hash-tegs');
+        const hashTegtext = document.createElement('p');
+
+        const closeFirst = document.createElement('span');
+        const closeSecond = document.createElement('span');
+        closeFirst.classList.add('close-modal-first');
+        closeSecond.classList.add('close-modal-second');
+
+        nameHashTeg.append(hashTegtext);
+        nameHashTeg.append(closeFirst);
+        nameHashTeg.appendChild(closeSecond);
+
+        input.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter') {
+                return;
+            }
+            if (date.includes(input.value)) {
+                return;
+            } else {
+                hashTegtext.textContent = '#';
+                hashTegtext.textContent += input.value;
+                hashTegtext.style.color = '#' + (Math.random() * 0x1000000 | 0x1000000).toString(16).slice(1);
+                const hashTegClone = nameHashTeg.cloneNode(true);
+                hashTeg.append(hashTegClone);
+                date.push(input.value);
+                input.value = '';
+            }
+        })
+
+        hashTeg.addEventListener('click', function (event) {
+            if (event.target.classList.contains('close-modal-first') || event.target.classList.contains('close-modal-second')) {
+                const elementDelete = event.target.closest('.hash-tegs');
+                elementDelete.remove();
+
+                const cleanTag = elementDelete.textContent.slice(1);
+                date = date.filter((data) => data !== cleanTag);
+            }
+        })
+    </script>
+</body>
+
+</html>
