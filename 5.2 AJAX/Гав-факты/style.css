@@ -6,3 +6,46 @@
     text-align: center;
 }
 
+.dog-facts {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    border: solid 2px #0B63F6;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 5px 0 #003CC5;
+}
+
+.input:focus {
+    border: solid 2px #0B63F6;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 5px 0 #003CC5;
+}
+
+.button {
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #0B63F6;
+    box-shadow: 0 5px 0 #003CC5;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.button:active {
+    background: #003CC5;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+.button:hover {
+    background: #003CC5;
+}
