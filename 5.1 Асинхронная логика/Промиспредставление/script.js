@@ -11,18 +11,16 @@ function getUserName() {
     if (window.localStorage.getItem('name')) {
         window.localStorage.clear();
         return;
+    } else {
+        return new Promise((resolve, reject) => {
+            button.textContent = 'Подтверждаю!';
+            input.placeholder = 'Ваше имя'
+
+            nameBlock.appendChild(input);
+            nameBlock.appendChild(button);
+            resolve(window.localStorage.setItem('name', input.value));
+        })
     }
-
-    return new Promise((resolve, reject) => {
-        button.textContent = 'Подтверждаю!';
-        input.placeholder = 'Ваше имя'
-
-        nameBlock.appendChild(input);
-        nameBlock.appendChild(button);
-
-        window.localStorage.setItem('name', input.value);
-        resolve();
-    })
 }
 
 button.addEventListener('click', () => {
