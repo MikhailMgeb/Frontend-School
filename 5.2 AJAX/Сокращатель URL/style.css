@@ -16,7 +16,14 @@
 .answer {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 50px;
 }
 
+.error {
+    color: crimson;
+}
 
+.loading {
+    background-color: #04AA6D;
+}
