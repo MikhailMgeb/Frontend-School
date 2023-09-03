@@ -2,6 +2,23 @@
     margin: 0;
 }
 
+.kap-cha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image {
+    margin: 50px;
+    width: 250px;
+}
+
+
+
+
+
+
+/* ФЫР ФЫР 
 .fox-gallery {
     display: flex;
     flex-direction: column;
@@ -22,4 +39,4 @@
 
 .fox-gallery__photo {
     max-width: 250px;
-}
+} */
