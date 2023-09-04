@@ -1,0 +1,43 @@
+.page {
+    margin: 0;
+}
+
+
+
+/* Кап-чача 
+*/
+.kap-cha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image {
+    margin: 50px;
+    width: 100px;
+}
+
+
+
+/* Фыр-фыр 
+.fox-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.load {
+    content: "Загрузка";
+    background: rgb(243, 84, 84);
+    left: calc(50% - 3px);
+    top: -25%;
+    animation: cssload-spin 675ms infinite linear;
+    -o-animation: cssload-spin 675ms infinite linear;
+    -ms-animation: cssload-spin 675ms infinite linear;
+    -webkit-animation: cssload-spin 675ms infinite linear;
+    -moz-animation: cssload-spin 675ms infinite linear;
+}
+
+.fox-gallery__photo {
+    max-width: 250px;
+} */
