@@ -1,25 +1,44 @@
 const inputText = document.querySelector('.kap-cha__input-text');
-const inputColor = document.querySelector('.kap-cha__input-color');
-const inputSize = document.querySelector('.kap-cha__input-size');
 const button = document.querySelector('.button');
 const blockImage = document.querySelector('.block-image');
+const blockKapcha = document.querySelector('.kap-cha');
+
+const letters = "абвгджзеклмнопрстуфхшзчцшьэъюя";
+const myKey = '51f627bee86430e3ac6ab7eec1b3d8fe';
+
+const randomLength = Math.floor(Math.random() * 4) + 2;
+
+function getRandomWord(letters, length) {
+    let randomWord = [];
+    for (let i = 0; i < length; i++) {
+        let randomIndex = Math.floor(Math.random() * letters.length);
+        randomWord.push(letters[randomIndex]);
+    }
+    return randomWord.join('');
+}
+
+const randomWord = getRandomWord(letters, randomLength);
 
 
-
-const myKey = '51f627bee86430e3ac6ab7eec1b3d8fe'
-
-button.addEventListener('click', () => {
-    fetch(`https://api.imgbun.com/png?key=${myKey}&text=${inputText.value}&color=${inputColor.value}&size=${inputSize.value}`)
+fetch(`https://api.imgbun.com/png?key=${myKey}&text=${randomWord}&color=&size=`)
     .then(response => response.json())
     .then(result => {
-        console.log(result)
         const image = document.createElement('img');
         image.classList.add('image');
+
         image.src = result.direct_link;
         blockImage.appendChild(image);
     })
-})
 
+button.addEventListener('click', () => {
+    if (inputText.value === randomWord) {
+        blockKapcha.remove();
+
+        const messege = document.createElement('p');
+        messege.textContent = 'верно!';
+        blockImage.appendChild(messege);
+    }
+})
 
 
 //ЗАДАНИЕ Фыр-фыр-------------------------------------------------------------------------------------

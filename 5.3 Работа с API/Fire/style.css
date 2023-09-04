@@ -2,6 +2,10 @@
     margin: 0;
 }
 
+
+
+/* Кап-чача 
+*/
 .kap-cha {
     display: flex;
     flex-direction: column;
@@ -10,15 +14,12 @@
 
 .image {
     margin: 50px;
-    width: 250px;
+    width: 100px;
 }
 
 
 
-
-
-
-/* ФЫР ФЫР 
+/* Фыр-фыр 
 .fox-gallery {
     display: flex;
     flex-direction: column;
