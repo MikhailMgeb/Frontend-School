@@ -1,3 +1,15 @@
 .page {
     margin: 0;
 }
+
+.cat-gallery {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.cat-photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
