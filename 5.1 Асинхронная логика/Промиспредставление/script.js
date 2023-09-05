@@ -9,8 +9,7 @@ button.classList.add('name-buttom');
 
 function getUserName() {
     if (window.localStorage.getItem('name')) {
-        window.localStorage.clear();
-        return;
+        return window.localStorage.getItem('name');
     } else {
         return new Promise((resolve, reject) => {
             button.textContent = 'Подтверждаю!';
