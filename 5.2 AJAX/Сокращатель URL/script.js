@@ -15,6 +15,7 @@ function handlerCopy() {
 urlbutton.addEventListener('click', () => {
     urlbutton.classList.add('loading');
     urlbutton.disabled = true;
+    urlInput.disabled = true;
     buttonCopy.remove();
     shotUrlText.textContent = '';
     shotUrlText.classList.remove('error');
@@ -23,6 +24,7 @@ urlbutton.addEventListener('click', () => {
         .then((response) => response.json())
         .then((url) => {
             urlbutton.disabled = false;
+            urlInput.disabled = false;
             urlbutton.classList.remove('loading');
 
             if (url.errorcode === 1) {
