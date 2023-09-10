@@ -14,9 +14,10 @@
     border-radius: 10px;
 }
 
-.registration-form__title{
+.registration-form__title {
     font-size: 24px;
     font-weight: 700;
+    margin-left: 5px;
 }
 
 .registration-form__seat {
@@ -25,8 +26,16 @@
     gap: 10px;
 }
 
-.registration-form__seat-error {
+.choice-seat-error {
     color: brown;
+}
+
+.form-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 5px;
+    padding: 5px;
 }
 
 .registration-form__input {
@@ -60,6 +69,16 @@
     margin: 20px;
 }
 
-.error-choice-seat {
-    color: brown;
+.message {
+    margin-top: 10px;
+    border: solid 1px black;
+    border-radius: 10px;
+    max-width: 500px;
+    color: #000000;
+    background-color: #37be5f;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }
