@@ -5,38 +5,55 @@ const checkboxFood = form.querySelector('.checkbox-food');
 const isSelectFood = form.querySelector('.registration-form_select-food');
 const message = document.querySelector('.message');
 
-const errorBlock = form.querySelector('.registration-form__error')
+const errorBlock = form.querySelector('.registration-form__error');
 errorBlock.classList.add('hidden');
 message.classList.add('hidden');
 
 const registrationData = {};
-registrationButton.disabled = true;
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-form.addEventListener('input', (event) => {
-    const target = event.target;
-    const key = target.name;
-    registrationData[key] = target.type === 'checkbox' ? target.checked : target.value;
-
-    if (registrationData['food-agree'] === true) {
-        isSelectFood.disabled = false;
-    } else {
-        isSelectFood.disabled = true;
-    }
-
-    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
-
-    if (!letters.includes(registrationData.seat[0])) {
+function validator(data) {
+    if (!LETTERS.includes(data.seat[0])) {
         errorBlock.innerHTML = '';
         const errorSeat = document.createElement('span');
         errorSeat.classList.add('choice-seat-error');
         errorSeat.textContent = 'Первая буква должна содержать "ABCDEF"';
         errorBlock.appendChild(errorSeat);
         errorBlock.classList.remove('hidden');
+        registrationButton.disabled = true;
     } else {
-        registrationButton.disabled = false;
         errorBlock.innerHTML = '';
         errorBlock.classList.add('hidden');
+        registrationButton.disabled = false;
     }
+}
+
+form.addEventListener('input', (event) => {
+    const target = event.target;
+    const key = target.name;
+    registrationData[key] = target.type === 'checkbox' ? target.checked : target.value;
+
+    if (registrationData.seat) {
+        validator(registrationData);
+    }
+
+    if (registrationData['food-agree']) {
+        isSelectFood.disabled = false;
+
+        if (registrationData['food-choice']) {
+            if (registrationData['food-choice'] === 'null') {
+                registrationButton.disabled = true;
+            } else {
+                registrationButton.disabled = false;
+            }
+        } else {
+            registrationButton.disabled = false;
+        }
+
+    } else {
+        isSelectFood.disabled = true;
+    }
+
 })
 
 form.addEventListener('submit', (event) => {
