@@ -1,6 +1,8 @@
-const API_KEY = 'live_bTMMMtmEahy2CTMELt6EXMLE0FiRch9inH4oe4vWQSROWrpd7ScMKcpkXzkvlr6O';
+const catGallery = document.querySelector('.cat-gallery');
 const selectCats = document.querySelector('.cat-gallery__select');
 const catPhotos = document.querySelector('.cat-photos');
+
+selectCats.disabled = true;
 
 fetch('https://api.thecatapi.com/v1/breeds')
     .then(response => response.json())
@@ -12,19 +14,38 @@ fetch('https://api.thecatapi.com/v1/breeds')
             selectCats.appendChild(option);
         };
     })
+    .finally(() => {
+        selectCats.disabled = false;
+    })
 
 selectCats.addEventListener('input', (event) => {
+    const loader = document.createElement('div');
+    loader.classList.add('loader');
+    catGallery.appendChild(loader);
+
+    selectCats.disabled = true;
     const choice = event.target.value;
-    catPhotos.innerHTML = '';
-    fetch(`https://api.thecatapi.com/v1/images/search?limit=5&breed_ids=${choice}&api_key=${API_KEY}`)
+    fetch(`https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${choice}`,
+        {
+            headers: {
+                "x-api-key": "live_bTMMMtmEahy2CTMELt6EXMLE0FiRch9inH4oe4vWQSROWrpd7ScMKcpkXzkvlr6O"
+            }
+
+        })
         .then(response => response.json())
         .then(photoList => {
-            for(let catPhoto of photoList){
+            catPhotos.innerHTML = '';
+
+            for (let catPhoto of photoList) {
                 const image = document.createElement('img');
                 image.classList.add('photo');
                 image.src = catPhoto.url;
 
                 catPhotos.appendChild(image);
             }
+        })
+        .finally(() => {
+            selectCats.disabled = false;
+            loader.remove()
         })
 })
