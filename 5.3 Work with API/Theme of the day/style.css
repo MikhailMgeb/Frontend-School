@@ -1,3 +1,9 @@
 .page {
     margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.theme {
+    max-width: 100%;
 }
