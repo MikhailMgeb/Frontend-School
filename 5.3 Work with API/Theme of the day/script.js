@@ -1,9 +1,5 @@
 const page = document.querySelector('.page')
 
-
-
-
-
 fetch('https://api.wordnik.com/v4/words.json/randomWord?api_key=luxfw7rqui299pwpwdflamw9baggz1zl55jm0dpxqjz1h3ym6')
     .then(response => response.json())
     .then(word => {
