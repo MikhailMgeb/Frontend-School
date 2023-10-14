@@ -22,7 +22,6 @@ selectCats.addEventListener("input", (event) => {
   const loader = document.createElement("div");
   loader.classList.add("loader");
   catGallery.appendChild(loader);
-  live_bTMMMtmEahy2CTMELt6EXMLE0FiRch9inH4oe4vWQSROWrpd7ScMKcpkXzkvlr6O
   selectCats.disabled = true;
   const choice = event.target.value;
   fetch(`https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${choice}`)
