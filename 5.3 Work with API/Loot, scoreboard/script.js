@@ -1,9 +1,17 @@
-const API_KEY = '94a17fefa325f09b65a0abe6ef3d0a12';
-const from = 'EUR';
-const to = 'GBP';
-const amount = '10';
-const endpoint = 'convert';
+const API_KEY = 'b27133ddfb0c08a0707a8803a2bae2d9';
+const valueRUB = document.querySelector('.scoreboard__rub');
+const valueGEL = document.querySelector('.scoreboard__gel');
 
-fetch('http://api.exchangeratesapi.io/v1/latest?access_key=6038913e1d493ee6d5f41ecb1965d643')
-    .then(response => response.json())
-    .then(data => console.log(data))
+const currencyExchange = () => {
+  fetch(`http://api.exchangeratesapi.io/v1/latest?access_key=${API_KEY}`)
+    .then((response) => response.json())
+    .then((data) => {
+      valueRUB.textContent = data.rates.RUB.toFixed(2) + ' RUB';
+      valueGEL.textContent = data.rates.GEL.toFixed(2) + ' GEL';
+    })
+    .finally(() => {
+      setInterval(currencyExchange, 2000);
+    });
+};
+
+currencyExchange();

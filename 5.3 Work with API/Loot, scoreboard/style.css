@@ -1,3 +1,18 @@
 .page {
     margin: 0;
 }
+
+.scoreboard {
+    text-align: center;
+    width: 760px;
+    margin: 0 auto;
+    background-color: black;
+    color: #e66d23;
+    border-radius: 24px;
+}
+
+.scoreboard__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
