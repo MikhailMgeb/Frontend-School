@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Телефона-телефона</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body class="page">
+    <h2>Телефона-телефона</h2>
+    <input class="phone-input" type="text" placeholder="+7(000)000-00-00" value="+7"/>
+  </body>
+
+  <script src="/node_modules/imask/dist/imask.min.js"></script>
+  <script>
+    const element = document.querySelector('.phone-input');
+
+    const maskOptions = {
+      mask: '+{7}(000)000-00-00',
+    };
+
+    const mask = IMask(element, maskOptions);
+  </script>
+</html>
