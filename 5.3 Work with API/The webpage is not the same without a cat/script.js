@@ -1,3 +1,5 @@
+import {API_KEY} from './apiKey.js';
+
 const catGallery = document.querySelector(".cat-gallery");
 const selectCats = document.querySelector(".cat-gallery__select");
 const catPhotos = document.querySelector(".cat-photos");
@@ -24,7 +26,7 @@ selectCats.addEventListener("input", (event) => {
   catGallery.appendChild(loader);
   selectCats.disabled = true;
   const choice = event.target.value;
-  fetch(`https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${choice}`)
+  fetch(`https://api.thecatapi.com/v1/images/search?limit=15&breed_ids=${choice}&api_key=${API_KEY}`)
     .then((response) => response.json())
     .then((photoList) => {
       catPhotos.innerHTML = "";
