@@ -1,7 +1,9 @@
+import { API_KEY } from './apiKey.js';
+
 const page = document.querySelector('.page');
 
 fetch(
-  `https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${prompt('введи ключ API')}`)
+  `https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${API_KEY }`)
   .then((response) => response.json())
   .then((word) => {
     const image = document.createElement('img');
