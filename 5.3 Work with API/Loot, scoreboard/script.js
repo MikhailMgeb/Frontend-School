@@ -1,4 +1,4 @@
-import {API_KEY} from './key.js';
+import {API_KEY} from './apiKey.js';
 const valueRUB = document.querySelector('.scoreboard__rub');
 const valueGEL = document.querySelector('.scoreboard__gel');
 
