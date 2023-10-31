@@ -14,7 +14,7 @@ conversionButton.addEventListener('click', () => {
     })
         .then((response) => response.json())
         .then((data) => {
-            // console.log('data: ', data.token);
+
             const bearerToken = data.token;
 
             return fetch('https://api.ilovepdf.com/v1/start/htmlpdf', {
@@ -26,7 +26,6 @@ conversionButton.addEventListener('click', () => {
                 .then((data) => {
                     const requestServer = data.server;
                     const requestTask = data.task;
-                    // console.log(requestServer, requestTask)
 
                     fetch(`https://${requestServer}/v1/upload`, {
                         method: "POST",
@@ -55,27 +54,30 @@ conversionButton.addEventListener('click', () => {
                                     'files': [
                                         {
                                             'server_filename': serverFilename,
-                                            'filename': 'server.pdf'
+                                            'filename': 'server.pdf',
                                         }
                                     ]
                                 })
                             })
                                 .then((response) => response.json())
-                                .then((data) => {
-                                    console.log(data);
-
+                                .then(() => {
                                     fetch(`https://${requestServer}/v1/download/${requestTask}`, {
                                         headers: {
                                             'Authorization': `Bearer ${bearerToken}`,
-
                                         },
                                     })
-                                        .then((resp) => {
-                                            return resp.blob();
-                                        })
-                                        .then((blob) => {
-                                            download(blob);
-                                        })
+                                        .then(response => response.blob())
+                                        .then(blob => {
+                                            const url = URL.createObjectURL(blob);
+                                            const link = document.createElement('a');
+                                            link.style.display = 'none';
+                                            link.href = url;
+
+                                            link.download = 'document.pdf';
+                                            document.body.appendChild(link);
+                                            link.click();
+                                            window.URL.revokeObjectURL(url);
+                                        });
                                 })
                         })
                 })
