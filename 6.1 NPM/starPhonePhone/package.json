@@ -1,5 +1,5 @@
 {
-  "name": "star_phone-phone",
+  "name": "starPhonePhone",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "imask": "^7.1.3"
+    "intl-tel-input": "^18.2.1"
   }
 }
