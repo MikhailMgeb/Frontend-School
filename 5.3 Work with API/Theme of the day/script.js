@@ -14,24 +14,23 @@ fetch(
   })
   .then((response) => response.json())
   .then((url) => {
-
     if (url.total === 0) {
-      fetch(
+      return fetch(
         `https://api.unsplash.com/photos/random?client_id=Sc_x-ousk_bVIWSlFcHp9sER1cCtnxwmZDd8quQnCyk`
       )
         .then((response) => response.json())
-        .then((url) => {
-          image.src = url.urls.full;
-          page.appendChild(image);
-        })
-        .catch(console.log('нет фотки!!!'));
     }
 
-    image.src = url.results[0].urls.full;
-    page.appendChild(image);
+    return url.results[0]
   })
   .finally(() => {
     const loader = document.querySelector('.lds-ring');
     loader.classList.add('hidden');
   })
-  .catch(() => { 'error!' });
+  .catch(() => { 'error!' })
+  .then((url) => {
+    console.log(url)
+    image.src = url.urls.full;
+    page.appendChild(image);
+  })
+  .catch(console.log('нет фотки!!!'));
