@@ -4,5 +4,8 @@
 }
 
 .image{
-    width: 200px;
+    max-width: 1000px;
+    max-height: 414px;
+
 }
+

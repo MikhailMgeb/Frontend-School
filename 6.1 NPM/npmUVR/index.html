@@ -6,34 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>npmУВР</title>
   <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css" />
-  <link rel="stylesheet" href="/node_modules/dimbox/dist/css/dimbox.min.css" />
+  <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="page">
   <h1>npmУВР</h1>
-  <a href="/image/Avatar_Vertical_btn_bg-400x400.png" data-dimbox="my-gallery">
-    <img class="image" src="/image/Avatar_Vertical_btn_bg-400x400.png" alt="This is an awesome image" />
-  </a>
-  <a href="/image/capybara-square-1-400x400.jpg.optimal.jpg" data-dimbox="my-gallery">
-    <img class="image" src="/image/capybara-square-1-400x400.jpg.optimal.jpg" alt="This is an awesome image" />
-  </a>
-  <a href="/image/CLI327.labradors.ChocolateLabsMP_068_FrontCover-1-400x400.jpg" data-dimbox="my-gallery">
-    <img class="image" src="/image/CLI327.labradors.ChocolateLabsMP_068_FrontCover-1-400x400.jpg"
-      alt="This is an awesome image" />
-  </a>
-  <a href="/image/images.jpeg" data-dimbox="my-gallery">
-    <img class="image" src="/image/images.jpeg" alt="This is an awesome image" />
-  </a>
-  <a href="/image/red-eyed-tree-frog-square-1-400x400.jpg.optimal.jpg" data-dimbox="my-gallery">
-    <img class="image" src="/image/red-eyed-tree-frog-square-1-400x400.jpg.optimal.jpg"
-      alt="This is an awesome image" />
-  </a>
-</body>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+    </div>
+  </div>
 
-<script src="/node_modules/dimbox/dist/js/dimbox.min.js"></script>
-<script>
-  dimbox.init();
-</script>
+  <script src="/node_modules/swiper/swiper-bundle.min.js"></script>
+  <script src="/script.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
 
 </html>

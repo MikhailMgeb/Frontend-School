@@ -4,12 +4,12 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx http-server ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dimbox": "^1.0.3"
+    "swiper": "^11.0.4"
   }
 }
