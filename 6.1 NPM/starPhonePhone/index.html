@@ -11,32 +11,25 @@
 </head>
 
 <body class="page">
-  <h2>Телефона-телефона</h2>
-  <input class="phone" type="tel">
-  <button id="btn" type="button">Validate</button>
-  <span id="valid-msg" class="hide">✓ Valid</span>
-  <span id="error-msg" class="hide"></span>
+  <h1>Телефона-телефона</h2>
+    <h2>International Telephone Input</h2>
+    <input class="phone" type="tel">
+    <button class="btn" type="button">Validate</button>
+    <span class="valid-msg hide">✓ Valid</span>
+    <span class="error-msg hide"></span>
 </body>
 
 <script src="./node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
 <script>
   const input = document.querySelector('.phone');
-  window.intlTelInput(input, {
-    onlyCountries: ["al", "ad", "at", "by", "be", "ba", "bg", "hr", "cz", "dk",
-      "ee", "fo", "fi", "fr", "de", "gi", "gr", "va", "hu", "is", "ie", "it", "lv",
-      "li", "lt", "lu", "mk", "mt", "md", "mc", "me", "nl", "no", "pl", "pt", "ro",
-      "ru", "sm", "rs", "sk", "si", "es", "se", "ch", "ua", "gb"],
-    utilsScript: "./node_modules/intl-tel-input/build/js/utils.js"
-  });
+  const button = document.querySelector('.btn');
+  const errorMsg = document.querySelector('.error-msg');
+  const validMsg = document.querySelector('.valid-msg');
 
-  const button = document.querySelector("#btn");
-  const errorMsg = document.querySelector("#error-msg");
-  const validMsg = document.querySelector("#valid-msg");
-
-  const errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+  const errorMap = ['Invalid number', 'Invalid country code', 'Too short', 'Too long', 'Invalid number'];
 
   const iti = window.intlTelInput(input, {
-    utilsScript: "./node_modules/intl-tel-input/build/js/utils.js"
+    utilsScript: '/node_modules/intl-tel-input/build/js/utils.js'
   });
 
   const reset = () => {
@@ -49,7 +42,7 @@
   button.addEventListener('click', () => {
     reset();
     if (input.value.trim()) {
-      if (iti.isPossibleNumber()) {
+      if (iti.isValidNumber()) {
         validMsg.classList.remove("hide");
       } else {
         input.classList.add("error");
@@ -60,19 +53,18 @@
     }
   });
 
+  input.addEventListener('keydown', (e) => {
+    const key = e.charCode || e.keyCode || 0;
+    if (!(key === 8 || key === 9 || key === 46 || (key >= 37 && key <= 40) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key === 107 || key === 109 || key === 173 || key === 61 || key === 187)) {
+
+    }
+  })
+
   input.addEventListener('change', reset);
   input.addEventListener('keyup', reset);
 
-  window.intlTelInput(input, {
-  initialCountry: "auto",
-  geoIpLookup: callback => {
-    fetch("https://ipapi.co/json")
-      .then(res => res.json())
-      .then(data => callback(data.country_code))
-      .catch(() => callback("us"));
-  },
-  utilsScript: "./node_modules/intl-tel-input/build/js/utils.js"
-});
+
+
 
 </script>
 
