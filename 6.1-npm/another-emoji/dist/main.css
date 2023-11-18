@@ -1,0 +1,23 @@
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  \*****************************************************************/
+.page {
+    margin: 0;
+}
+
+.input {
+    margin: -7px 0 0 0;
+}
+
+.emoji-block {
+    display: flex;
+  }
+
+.lcep-trigger {
+    top: 9px;
+    right: 11px;
+    height: 28px;
+    width: 22px;
+}
+
+/*# sourceMappingURL=main.css.map*/

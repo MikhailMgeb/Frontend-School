@@ -1,0 +1,14 @@
+.page {
+    margin: 0;
+}
+
+.emoji-block {
+    display: flex;
+}
+
+.lcep-trigger {
+    top: 9px;
+    right: 11px;
+    height: 28px;
+    width: 22px;
+}
