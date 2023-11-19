@@ -6,9 +6,7 @@
     display: flex;
 }
 
-.lcep-trigger {
-    top: 9px;
-    right: 11px;
-    height: 28px;
-    width: 22px;
+.emoji-block__input {
+    margin-top: -3px;
+    margin-right: -5px;
 }

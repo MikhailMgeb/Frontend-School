@@ -5,19 +5,13 @@
     margin: 0;
 }
 
-.input {
-    margin: -7px 0 0 0;
-}
-
 .emoji-block {
     display: flex;
-  }
+}
 
-.lcep-trigger {
-    top: 9px;
-    right: 11px;
-    height: 28px;
-    width: 22px;
+.emoji-block__input {
+    margin-top: -3px;
+    margin-right: -5px;
 }
 
 /*# sourceMappingURL=main.css.map*/
