@@ -13,59 +13,14 @@
 <body class="page">
   <h1>Телефона-телефона</h2>
     <h2>International Telephone Input</h2>
-    <input class="phone" type="tel">
+    <input class="phone" type="text">
     <button class="btn" type="button">Validate</button>
     <span class="valid-msg hide">✓ Valid</span>
     <span class="error-msg hide"></span>
 </body>
 
 <script src="./node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
-<script>
-  const input = document.querySelector('.phone');
-  const button = document.querySelector('.btn');
-  const errorMsg = document.querySelector('.error-msg');
-  const validMsg = document.querySelector('.valid-msg');
-
-  const errorMap = ['Invalid number', 'Invalid country code', 'Too short', 'Too long', 'Invalid number'];
-
-  const iti = window.intlTelInput(input, {
-    utilsScript: '/node_modules/intl-tel-input/build/js/utils.js'
-  });
-
-  const reset = () => {
-    input.classList.remove("error");
-    errorMsg.innerHTML = "";
-    errorMsg.classList.add("hide");
-    validMsg.classList.add("hide");
-  };
-
-  button.addEventListener('click', () => {
-    reset();
-    if (input.value.trim()) {
-      if (iti.isValidNumber()) {
-        validMsg.classList.remove("hide");
-      } else {
-        input.classList.add("error");
-        const errorCode = iti.getValidationError();
-        errorMsg.innerHTML = errorMap[errorCode];
-        errorMsg.classList.remove("hide");
-      }
-    }
-  });
-
-  input.addEventListener('keydown', (e) => {
-    const key = e.charCode || e.keyCode || 0;
-    if (!(key === 8 || key === 9 || key === 46 || (key >= 37 && key <= 40) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key === 107 || key === 109 || key === 173 || key === 61 || key === 187)) {
-
-    }
-  })
-
-  input.addEventListener('change', reset);
-  input.addEventListener('keyup', reset);
-
-
-
-
-</script>
+<script src="./node_modules/imask/dist/imask.js"></script>
+<script src="/script.js"></script>
 
 </html>
