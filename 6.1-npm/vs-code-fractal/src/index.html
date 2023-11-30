@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../node_modules/codeprinter/CodePrinter.css">
 
 <body>
-  <textarea>function factorial(n) {
+  <textarea class="editor-block">function factorial(n) {
         if (n === 0) {
           return 1;
         }
@@ -19,7 +19,7 @@
 </body>
 <script type="text/javascript" src="../node_modules/codeprinter/CodePrinter.js"></script>
 <script type="text/javascript">
-  const cp = new CodePrinter(document.getElementsByTagName('textarea')[0], {
+  const cp = new CodePrinter(document.querySelector('.editor-block'), {
     theme: 'default',
     mode: 'JavaScript',
     lineNumbers: true,
